@@ -11,18 +11,20 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     clearCart: (state) => {
-      // state.cartItems = [];
-      return {
-        cartItems: [],
-        amount: 1,
-        total: 0,
-        isLoading: true,
-      };
+      state.cartItems = [];
+    },
+    removeItem: (state, action) => {
+      console.log(action); //==>see the console in Browser as below
+      // *******************************************************************
+      // {type: 'cart/removeItem', payload: 'rec1JZlfCIBOPdcT2'}
+      // payload: "rec1JZlfCIBOPdcT2"
+      // type: "cart/removeItem"
+      //************************************************************* */
     },
   },
 });
 
-console.log(cartSlice); //the below thing in Browser console.
+// console.log(cartSlice); //the below thing in Browser console.
 //************************************************************************************************ */
 // {name: 'cart', actions: {…}, caseReducers: {…}, reducer: ƒ, getInitialState: ƒ}
 // actions: {clearCart: ƒ}                               ===>v have a clearCart function
@@ -31,5 +33,5 @@ console.log(cartSlice); //the below thing in Browser console.
 // name: "cart"
 // reducer: ƒ (state, action)
 //********************************************************************************************************** */
-export const { clearCart } = cartSlice.actions;
+export const { clearCart, removeItem } = cartSlice.actions;
 export default cartSlice.reducer; //==>here v have exported the above reducer.
