@@ -9,15 +9,21 @@ const initialState = {
 const cartSlice = createSlice({
   name: "cart", //any thing u can give but give it as the feature related name (suggestion)
   initialState,
+  reducers: {
+    clearCart: (state) => {
+      state.cartItems = [];
+    },
+  },
 });
 
-// console.log(cartSlice); //the below thing in Browser console.
+console.log(cartSlice); //the below thing in Browser console.
 //************************************************************************************************ */
 // {name: 'cart', actions: {…}, caseReducers: {…}, reducer: ƒ, getInitialState: ƒ}
-// actions: {}
-// caseReducers: {}
+// actions: {clearCart: ƒ}                               ===>v have a clearCart function
+// caseReducers: {clearCart: ƒ}
 // getInitialState: ƒ ()
 // name: "cart"
-// reducer: ƒ (state, action) ==>this "reducer" is going to control the State(initial State) in the Slice.
+// reducer: ƒ (state, action)
 //********************************************************************************************************** */
+export const { clearCart } = cartSlice.actions;
 export default cartSlice.reducer; //==>here v have exported the above reducer.
