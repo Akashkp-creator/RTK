@@ -1,7 +1,7 @@
 import React from "react";
 import { ChevronDown, ChevronUp } from "../icons";
 import { useDispatch } from "react-redux";
-import { removeItem } from "../features/cart/cartSlice";
+import { decrease, increase, removeItem } from "../features/cart/cartSlice";
 
 const CartItem = ({ id, img, title, price, amount }) => {
   const dispatch = useDispatch();
@@ -18,13 +18,25 @@ const CartItem = ({ id, img, title, price, amount }) => {
       </div>
       <div>
         {/* increase amount */}
-        <button className="amount-btn">
+        <button
+          className="amount-btn"
+          onClick={() => dispatch(increase({ id }))} //id is sent in object need to destructure in slice
+        >
           <ChevronUp />
         </button>
         {/* amount */}
         <p className="amount">{amount}</p>
         {/* decrease amount */}
-        <button className="amount-btn">
+        <button
+          className="amount-btn"
+          onClick={() => {
+            if (amount === 1) {
+              dispatch(removeItem(id)); //id sent directly so no need to destructure in slice
+              return;
+            }
+            dispatch(decrease({ id }));
+          }}
+        >
           <ChevronDown />
         </button>
       </div>
