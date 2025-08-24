@@ -11,10 +11,12 @@ const cartSlice = createSlice({
 });
 
 console.log(cartSlice); //the below thing in Browser console.
+//************************************************************************************************ */
 // {name: 'cart', actions: {…}, caseReducers: {…}, reducer: ƒ, getInitialState: ƒ}
 // actions: {}
 // caseReducers: {}
 // getInitialState: ƒ ()
 // name: "cart"
 // reducer: ƒ (state, action) ==>this "reducer" is going to control the State(initial State) in the Slice.
-export default cartSlice.reducer;
+//********************************************************************************************************** */
+export default cartSlice.reducer; //==>here v have exported the above reducer.
