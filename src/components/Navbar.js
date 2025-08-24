@@ -3,11 +3,7 @@ import { CartIcon } from "../icons";
 
 const Navbar = () => {
   //v r console in Browser (v can access the "entire Store" using "useSelector" Hook).
-  console.log(
-    useSelector((store) => {
-      console.log(store);
-    })
-  );
+  const amount = useSelector((store) => store.cart.amount);
   //   *************************************************************************************************
   // cart: {cartItem: Array(0), amount: 0, total: 0, isLoading: true}
 
@@ -19,7 +15,7 @@ const Navbar = () => {
         <div className="nav-container">
           <CartIcon />
           <div className="amount-container">
-            <p className="total-amount">0</p>
+            <p className="total-amount">{amount}</p>
           </div>
         </div>
       </div>
