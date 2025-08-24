@@ -10,7 +10,7 @@ const cartSlice = createSlice({
   initialState,
 });
 
-console.log(cartSlice); //the below thing in Browser console.
+// console.log(cartSlice); //the below thing in Browser console.
 //************************************************************************************************ */
 // {name: 'cart', actions: {…}, caseReducers: {…}, reducer: ƒ, getInitialState: ƒ}
 // actions: {}
