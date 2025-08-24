@@ -14,12 +14,8 @@ const cartSlice = createSlice({
       state.cartItems = [];
     },
     removeItem: (state, action) => {
-      console.log(action); //==>see the console in Browser as below
-      // *******************************************************************
-      // {type: 'cart/removeItem', payload: 'rec1JZlfCIBOPdcT2'}
-      // payload: "rec1JZlfCIBOPdcT2"
-      // type: "cart/removeItem"
-      //************************************************************* */
+      const itemId = action.payload;
+      state.cartItems = state.cartItems.filter((item) => item.id !== itemId);
     },
   },
 });
